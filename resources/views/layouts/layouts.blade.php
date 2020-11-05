@@ -11,6 +11,9 @@
             @yield('content')
         </div>
         
+        @component('components.footer')
+        @endcomponent
+        
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
