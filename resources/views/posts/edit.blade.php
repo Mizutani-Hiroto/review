@@ -22,4 +22,5 @@
     
     <a href="/posts/{{ $post->id }}">Show</a>
     <a href="/posts">Back</a>
+    
 @endsection
