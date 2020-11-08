@@ -34,4 +34,5 @@
     </form>
     
     <a href="/posts">Back</a>
+    
 @endsection
