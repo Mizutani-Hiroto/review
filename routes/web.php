@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/','PostController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::resource('/posts','PostController');
+Route::resource('/posts','PostController')->middleware('auth');
 
 if(env('APP_ENV') === 'local') {
     URL::forceScheme('https');
