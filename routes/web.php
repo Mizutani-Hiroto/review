@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome')->middleware('auth');
+    return view('welcome');
 });
 
 Route::resource('/posts','PostController')->middleware('auth');
