@@ -23,3 +23,5 @@ if(env('APP_ENV') === 'local') {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/mypage','MypageController@index')->middleware('auth');
