@@ -1,0 +1,6 @@
+seederの使い方　
+1.ファイルの作成                           php artisan make:seeder テーブル名Seeder
+2.run()にサンプルデータを記述              migrationのTableを参考にしてnullableがついている項目をSeederファイルに記述する（eloquent DBファサードの２タイプあるみたい）
+3.DatabaseSeeder.phpでファイルをコール　　 自動的に追加されてたが確認はしよう。
+4.実行　　　　　　　　　　　　　　　　　　 composer dump-autoload してから　php artisan db:seed --class=テーブル（複数形）TableSeeder
+5.Tinkerで確認するといい　　　　　　　　　　
