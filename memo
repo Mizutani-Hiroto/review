@@ -1,6 +1,7 @@
 seederの使い方　
-1.ファイルの作成                           php artisan make:seeder テーブル名Seeder
-2.run()にサンプルデータを記述              migrationのTableを参考にしてnullableがついている項目をSeederファイルに記述する（eloquent DBファサードの２タイプあるみたい）
-3.DatabaseSeeder.phpでファイルをコール　　 自動的に追加されてたが確認はしよう。
-4.実行　　　　　　　　　　　　　　　　　　 composer dump-autoload してから　php artisan db:seed --class=テーブル（複数形）TableSeeder
-5.Tinkerで確認するといい　　　　　　　　　　
+1.Seederの作成                          　 php artisan make:seeder テーブル名Seeder
+2.run()にデータを記述             　　　　 migrationのTableを参考にしてnullableがついている項目をSeederファイルに記述する（eloquent DBファサードの２タイプあるみたい）
+3.model名Factory.phpの更新　　　　　　　　 $モデル名s= factory(App\User::class,ダミーを作成する数値)->create
+4.DatabaseSeeder.phpでファイルをコール　　 自動的に追加されてたが確認はしよう。リレーションのあるデータベースのダミー作成は作成指示をだしたクラスの名前にする
+5.実行　　　　　　　　　　　　　　　　　　 composer dump-autoload してから　php artisan db:seed --class=テーブル（複数形）TableSeeder
+6.Tinkerで確認するといい　　　　　　　　　　

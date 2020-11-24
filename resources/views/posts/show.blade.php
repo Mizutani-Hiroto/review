@@ -22,6 +22,7 @@
           <input type="hidden" name="_method" value="DELETE">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <button type="submit" class="btn btn-outline-danger">Delete</button>
+          <p>{{ $post->user->name() }}</p>
         </form>
       </div>
     </div>
