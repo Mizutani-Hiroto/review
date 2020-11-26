@@ -89,7 +89,7 @@ class PostController extends Controller
             'title' => 'required',
             'content' => 'required',
             ]);
-        
+        $post = Auth::user()->posts->find($post->id);
         $post->title = $request->input('title');
         $post->content = $request->input('content');
         $post->save();
@@ -105,6 +105,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $post = Auth::user()->posts->find($post->id);
         $post->delete();
         
         return redirect()->route('posts.index');
