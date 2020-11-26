@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -45,6 +46,7 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+        $post->user_id = Auth::user()->id;
         $post->save();
         
         return redirect()->route('posts.show',['id'=> $post->id])->with('message','Post was successfully created.');
@@ -69,6 +71,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $post = Auth::user()->posts->find($post->id);
+
         return view('posts.edit',compact('post'));
     }
 
