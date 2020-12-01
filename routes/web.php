@@ -26,4 +26,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/mypage','MypageController@index')->middleware('auth');
 
-Route::get('/result','PostController@result');
+Route::get('/result','PostController@result')->middleware('auth');

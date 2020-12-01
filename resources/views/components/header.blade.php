@@ -31,7 +31,7 @@
       {{ csrf_field() }}
       {{ method_field('get') }}
       <a href="/register">新規登録</a>
-      <input class="form-control mr-sm-2" type="search" placeholder="タイトル検索ができます" aria-label="Search" name="name">
+      <input class="form-control mr-sm-2" type="search" placeholder="タイトル検索ができます" aria-label="Search" name="title">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

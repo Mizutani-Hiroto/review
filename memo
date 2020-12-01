@@ -10,3 +10,6 @@ seederの使い方　
 タイトル一覧から検索機能を実装する
 必要なこと
 ビュー<form>の設定
+<form action="{{ }}" method="">
+{{ csrf_field }}
+{{ method_field('') }}

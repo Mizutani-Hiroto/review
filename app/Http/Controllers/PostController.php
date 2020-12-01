@@ -19,11 +19,6 @@ class PostController extends Controller
         
         return view('posts.index', compact('posts'));
     }
-    
-    public function search(Request $request){
-        $output = $request->title;
-        return view('serch',compact('output'));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -114,5 +109,10 @@ class PostController extends Controller
         $post->delete();
         
         return redirect()->route('posts.index');
+    }
+    public function search(Request $request)
+    {
+        $posts = Post::all()->where('title',$request->search);
+        
     }
 }
