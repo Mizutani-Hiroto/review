@@ -49,7 +49,7 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id;
         $post->save();
         
-        return redirect()->route('posts.show',['id'=> $post->id])->with('message','Post was successfully created.');
+        return redirect()->route('posts.show',['id'=>$post->id])->with('message','Post was successfully created.');
     }
 
     /**
@@ -112,8 +112,8 @@ class PostController extends Controller
     }
     public function result(Request $request)
     {
-        $posts = Post::where('title','=','$request')->get();
+        $posts = Post::where('title',$request->input('title'))->get();
         
-        return view('posts.result',compact('posts'));
+        return view('posts.index',compact('posts'));
     }
 }
