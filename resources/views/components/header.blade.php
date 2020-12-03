@@ -27,12 +27,12 @@
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="{{ url('/search') }}" method="post">
+    <form class="form-inline my-2 my-lg-0" action="{{ url('/result') }}" method="get">
       {{ csrf_field() }}
       {{ method_field('get') }}
       <a href="/register">新規登録</a>
       <input class="form-control mr-sm-2" type="search" placeholder="タイトル検索ができます" aria-label="Search" name="title">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
     </form>
   </div>
 </nav>

@@ -110,9 +110,10 @@ class PostController extends Controller
         
         return redirect()->route('posts.index');
     }
-    public function search(Request $request)
+    public function result(Request $request)
     {
-        $posts = Post::all()->where('title',$request->search);
+        $posts = Post::where('title','=','$request')->get();
         
+        return view('posts.result',compact('posts'));
     }
 }

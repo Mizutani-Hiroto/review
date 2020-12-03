@@ -10,6 +10,11 @@ seederの使い方　
 タイトル一覧から検索機能を実装する
 必要なこと
 ビュー<form>の設定
-<form action="{{ }}" method="">
+<form action="CGIプログラムのURI" method="">
+  action 必須指定　送信ボタンでデータの送信先の指定
+  
+  method 非必須　転送方法の指定 post(ユーザー側が情報を送信) or get(サーバー側のデータの取得)
 {{ csrf_field }}
-{{ method_field('') }}
+
+where('第一引数','第二引数','第三引数') 3つの引数を受け取る 第一引数　カラム名　第二　演算子　第三　カラム名に対する値
+
