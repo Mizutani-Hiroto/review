@@ -1,0 +1,21 @@
+PHP のインストールから cloud9の場合
+sudo yum -y update パッケージリストの更新
+
+sudo yum -y install php72 php72-mbstring php72-pdo　指定のバージョンで実行環境のインストール
+
+sudo unlind /usr/bin/php　標準でインストールされているリンクの削除
+
+sudo ln -s /etc/alternatives/php7 /usr/bin/php　インストールしたPHP7.2のリンクの作成
+
+php --version　←を実行しバージョンが表示されていれば問題なし
+
+sudoとは？　substitute user do の略　　スーパーユーザーの権限でコマンドを実行するときに使うコマンド（UNIX系で使える←LinuxとかMac
+オプションがたくさんある。-s　は環境変数SHELLに設定されているシェルで実行するという意味
+
+composer のインストール　ライブラリ依存関係を管理するものです
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"　Composerをインストールするためのスクリプトをダウンロードしています。
+
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer　インストール
+
+composer -V　確認のコマンド
