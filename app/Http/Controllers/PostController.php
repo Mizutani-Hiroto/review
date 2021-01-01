@@ -18,6 +18,8 @@ class PostController extends Controller
         $posts = Post::all();
         
         return view('posts.index', compact('posts'));
+        
+        
     }
 
     /**
@@ -42,6 +44,12 @@ class PostController extends Controller
             'title' => 'required',
             'content' => 'required',
             ]);
+            
+            $image = $request->file('icon')->store('public/image');
+            $image = srt_replace('public/image/','',$image);
+            $image = new Image;
+            $image->file = $image;
+            $image->save();
         
         $post = new Post();
         $post->title = $request->input('title');

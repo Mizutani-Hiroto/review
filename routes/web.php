@@ -27,3 +27,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/mypage','MypageController@index')->middleware('auth');
 
 Route::get('/result','PostController@result')->middleware('auth');
+
+Route::get('/posts', 'ImageController@input');
+
+Route::get('/posts', 'ImageController@upload');
+
+Route::get('/posts', 'ImageController@output');
